@@ -12,6 +12,9 @@ import javax.persistence.Id;
  *
  * @author Teun
  */
+@NamedQueries({@NamedQuery(name = "Vehicle.findAll", query = "SELECT v FROM Vehicle v"),
+               @NamedQuery(name = "Vehicle.findByLicenseplate", query = "SELECT v FROM Vehicle v WHERE v.hashedLicencePlate = :hashedLicensePlate")
+})
 @Entity
 public class Vehicle implements IVehicle, Serializable {
 
